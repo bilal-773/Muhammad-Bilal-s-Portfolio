@@ -161,25 +161,25 @@ section.active {
     display: inline-block;
     color: transparent;
     -webkit-text-stroke: .07rem var(--main-color);
+    opacity: 0;
+    pointer-events: none;
     animation: display-text 6s linear infinite;
 }
 
-.home-detail h2 span:nth-child(1) {
+.home-detail h2 span:nth-of-type(1) {
     animation-delay: 0s;
 }
-.home-detail h2 span:nth-child(2) {
+.home-detail h2 span:nth-of-type(2) {
     animation-delay: 2s;
 }
-.home-detail h2 span:nth-child(3) {
+.home-detail h2 span:nth-of-type(3) {
     animation-delay: 4s;
 }
 
 @keyframes display-text {
-
-    25%,
-    100% {
-        display: none;
-    }
+	0% { opacity: 1; pointer-events: auto; }
+    33.33% { opacity: 0; pointer-events: none; }
+    100% { opacity: 0; pointer-events: none; }
 }
 
 .home-detail h2 span::before {
@@ -190,7 +190,8 @@ section.active {
     color: var(--main-color);
     white-space: nowrap;
     overflow: hidden;
-    animation: fill-text 2s linear infinite;
+    animation: fill-text 2s linear;
+    animation-delay: inherit;
 }
 
 @keyframes fill-text {
@@ -778,6 +779,10 @@ section.active {
     cursor: pointer;
 }
 
+p, h2 {
+    word-break: break-word;
+}
+
 /* breakpoints */
 @media screen and (max-width: 1200px) {
     html {
@@ -859,13 +864,25 @@ section.active {
 }
 
 @media screen and (max-width: 600px) {
-    .home-img .img-box {
-        width: 30rem;
-        height: 30rem;
+    html {
+        font-size: 45%;
     }
-
-    .contact-box .field-box {
+    .home-img .img-box {
+        width: 20rem;
+        height: 20rem;
+    }
+    .portfolio-carousel .img-item img {
+        height: 18rem;
+    }
+    .portfolio-container,
+    .resume-container,
+    .contact-container,
+    .services-container {
         grid-template-columns: 1fr;
+    }
+    .resume-list,
+    .portfolio-carousel .img-slide {
+        overflow-x: auto;
     }
 }
 
@@ -895,10 +912,29 @@ section.active {
     }
 
     .contact-box form {
-        padding: 2.5rem 3rem 3.5rem;
+        padding: 1.5rem 1.5rem 2rem;
     }
 
     .contact-box h2 {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    html {
+        font-size: 35%;
+    }
+    .home-img .img-box {
+        width: 14rem;
+        height: 14rem;
+    }
+    .portfolio-carousel .img-item img {
+        height: 10rem;
     }
 }
