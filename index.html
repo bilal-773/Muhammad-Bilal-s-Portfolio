@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilal</title>
+    <title>Muhammad Bilal's Portfolio</title>
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- custom css -->
     <link rel="stylesheet" href="style.css">
+   
 </head>
 
 <body>
@@ -18,331 +19,339 @@
     <header class="active">
         <a href="#" class="logo">Muhammad Bilal's Portfolio</a>
 
-        <i class='bx bx-menu' id="menu-icon"></i>   
+        <i class='bx bx-menu' id="menu-icon" aria-label="Open menu"></i>   
 
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Resume</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+        <nav aria-label="Main Navigation">
+            <a href="#" class="active" aria-label="Home">Home</a>
+            <a href="#" aria-label="Services">Services</a>
+            <a href="#" aria-label="Resume">Resume</a>
+            <a href="#" aria-label="Portfolio">Portfolio</a>
+            <a href="#" aria-label="Contact">Contact</a>
         </nav>
     </header>
 
-    <!-- bars background -->
-    <div class="bars-box active">
-       
-        <div class="bar" style="--i:4;"></div>
-        <div class="bar" style="--i:3;"></div>
-        <div class="bar" style="--i:2;"></div>
-        
-    </div>
-
-    <!-- home section -->
-    <section class="home active">
-        <div class="home-detail">
-            <h1>Muhammad Bilal</h1>
-            <h2>I'm a
-                <span style="--i:4;" data-text="Web Developer">Web Developer</span>
-                <span style="--i:3;" data-text="Cybersecurity Specialist">Cybersecurity Specialist</span>
-                <span style="--i:1;" data-text="Graphic Designer">Graphic Designer</span> 
-            </h2>
-            <p>BSCS FAST NUCES University | Cybersecurity & AI Enthusiast | Front-End Developer | Web Security & Development</p>
-            <div class="btn-sci">
-                <a href="Muhammad Bilal CV.pdf" class="btn" download>Download CV</a>
-                <div class="sci">
-                    <a href="https://github.com/bilal-773" target="_blank"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.linkedin.com/in/muhammad-bilal-8b8133335/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://www.instagram.com/bilal_asif_773?igsh=emk0azNncDY1cGVu" target="_blank"><i class='bx bxl-instagram'></i></a>
-                </div>
-            </div>
+    <main>
+        <!-- bars background -->
+        <div class="bars-box active">
+           
+            <div class="bar" style="--i:4;"></div>
+            <div class="bar" style="--i:3;"></div>
+            <div class="bar" style="--i:2;"></div>
             
         </div>
 
-        <div class="home-img">
-            <div class="img-box">
-                <div class="img-item">
-                    <img src="2.jpg">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- services section -->
-    <section class="services">
-        <h2 class="heading">My <span>Services</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-code-alt'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>Web Development</h3>
-                <p>Building responsive, modern websites using HTML, CSS, and JavaScript. Whether it's a personal portfolio, business landing page, or interactive web app, I deliver clean, user-friendly interfaces tailored to your needs.</p>
-            </div>
-
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-palette'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>Graphic Design</h3>
-                <p>Providing custom graphic design solutions for social media, branding, posters, and promotional content. I create visually compelling designs that align with your brand's identity, using tools like Adobe Photoshop, Illustrator, and Canva.</p>
-            </div>
-
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-camera'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>Photography</h3>
-                <p>Offering professional photography services including event coverage, portraits, and product shoots. I focus on capturing high-quality, story-driven visuals with attention to lighting, composition, and post-editing for a polished final look.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- resume section -->
-    <section class="resume">
-        <div class="resume-container">
-            <div class="resume-box">
-                <h2>Why Hire Me?</h2>
-                <p class="desc">With a strong foundation in web development, graphic design, and photography, I bring a unique blend of technical and creative skills to every project. I'm passionate about delivering high-quality work, meeting deadlines, and adapting to different client needs. My attention to detail, problem-solving mindset, and commitment to continuous learning make me a reliable and valuable addition to any team or project.</p>
-                <button class="resume-btn active">Experience</button>
-                <button class="resume-btn">Education</button>
-                <button class="resume-btn">Skills</button>
-                <button class="resume-btn">About Me</button>
-            </div>
-
-            <div class="resume-box">
-                <div class="resume-detail experience active">
-                    <h2 class="heading">My <span>Experience</span></h2>
-                    <p class="desc">Experienced in web development with a focus on responsive and interactive designs using HTML, CSS, and JavaScript. Skilled in graphic design, creating visually impactful content for branding and social media. Also offer professional photography services, capturing high-quality visuals for events and personal projects.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <p class="year">Present</p>
-                            <h3>Frontend Developer</h3>
-                            <p class="company"></p>
-                            <p>Skilled in front-end development using HTML, CSS, and JavaScript to build responsive, user-friendly, and interactive web interfaces.</p>
-                        </div>
-                       
-                        <div class="resume-item">
-                            <p class="year">Present</p>
-                            <h3>Backend Developer</h3>
-                            <p class="company"></p>
-                            <p>Skilled in back-end development with experience in server-side logic, databases, and APIs to build secure and scalable web applications.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">Present</p>
-                            <h3>Graphic Designer</h3>
-                            <p class="company">MLSA</p>
-                            <p>Graphic designer skilled in branding and social media visuals, with proficiency in Photoshop, Illustrator, and Canva.</p>
-                        </div>
+        <!-- home section -->
+        <section class="home active">
+            <div class="home-detail">
+                <h1>Muhammad Bilal</h1>
+                <h2>I'm a
+                    <span style="--i:0;" data-text="Web Developer">Web Developer</span>
+                    <span style="--i:1;" data-text="Cybersecurity Specialist">Cybersecurity Specialist</span>
+                    <span style="--i:2;" data-text="Graphic Designer">Graphic Designer</span>
+                </h2>
+                <p>BSCS FAST NUCES University | Cybersecurity & AI Enthusiast | Front-End Developer | Web Security & Development</p>
+                <div class="btn-sci">
+                    <a href="Muhammad Bilal CV.pdf" class="btn" download aria-label="Download CV">Download CV</a>
+                    <div class="sci">
+                        <a href="https://github.com/bilal-773" target="_blank"><i class='bx bxl-github'></i></a>
+                        <a href="https://www.linkedin.com/in/muhammad-bilal-8b8133335/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://www.instagram.com/bilal_asif_773?igsh=emk0azNncDY1cGVu" target="_blank"><i class='bx bxl-instagram'></i></a>
                     </div>
                 </div>
-
-                <div class="resume-detail education">
-                    <h2 class="heading">My <span>Education</span></h2>
-                    <p class="desc">Currently pursuing a Bachelor's in Computer Science (BSCS) at FAST University, with a strong focus on software development and web technologies.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <p class="year">2020-2022</p>
-                            <h3>OLevels</h3>
-                            <p class="company">Fatima Fertilizer School</p>
-                            <p>Built a strong foundation in core subjects including Mathematics, English, and Science.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2022 - 2024</p>
-                            <h3>Alevels</h3>
-                            <p class="company">Fatima Fertilizer School</p>
-                            <p>Focused on Computer Science, Mathematics, and Physics to prepare for a tech-driven career.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2024-Present</p>
-                            <h3>BS Computer Science</h3>
-                            <p class="company">FAST-NUCES</p>
-                            <p>Pursuing a BS in Computer Science with a focus on software development, algorithms, and web technologies.</p>
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <div class="resume-detail skills">
-                    <h2 class="heading">My <span>Skills</span></h2>
-                    <p class="desc">Skilled in HTML5, CSS3, and JavaScript for building responsive and interactive web interfaces. Experienced with React.js for creating dynamic, component-based front-end applications.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <i class='bx bxl-html5'></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-css3'></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-javascript'></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-react'></i>
-                            <span>React.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-detail about">
-                    <h2 class="heading">About <span>Me</span></h2>
-                    <p class="desc">Passionate Computer Science student with skills in web development, graphic design, and photography. Experienced in front-end technologies like HTML, CSS, JavaScript, and React. Creative, detail-oriented, and eager to contribute to innovative tech projects.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <p>Name <span>Muhammad Bilal</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Gender <span>Male</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Age <span>20 Years Old</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Status <span>Un-Married</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>City <span>Peshawar</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Nationality <span>Pakistani</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Experience <span>2+ Years</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Full Time <span>Available</span></p>
-                        </div>
-
-                        <div class="resume-item">
-                            <p>Phone <span>(+92) 312 303 117 7</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Email <span>bilal773asif@gmail.com</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Languages <span>English, Urdu</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- portfolio section -->
-    <section class="portfolio">
-        <h2 class="heading">Latest <span>Project</span></h2>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <div class="portfolio-detail active">
-                    <p class="numb">01</p>
-                    <h3>Frontend Project</h3>
-                    <p>BUYZ Diagnosis System is an interactive web app that helps users analyze their symptoms and get potential health problem matches. Featuring a responsive design, it offers an easy-to-use checklist, real-time analysis, and clear results, all built with HTML, CSS, and JavaScript for a smooth user experience.</p>
-                    <div class="tech">
-                        <p>HTML5, CSS3, JavaScript</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="https://bilal-773.github.io/BUYZ-Diagnosis-System/" target="_blank"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="https://github.com/bilal-773?tab=repositories" target="_blank"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
-                </div>
-
-                <div class="portfolio-detail">
-                    <p class="numb">02</p>
-                    <h3>Frontend + API Project</h3>
-                    <p>Sky Predict is a sleek and interactive weather app that provides real-time weather updates and a 5-day forecast using the OpenWeather API. It features a modern glassmorphism UI, smooth animations, and easy city search functionality.
-
-                        🔹 Features
-                        ✅ Live weather updates (temp, humidity, wind speed)
-                        ✅ 5-day forecast with dynamic icons
-                        ✅ Responsive, animated glass UI
-                        ✅ Error handling for invalid cities</p>
-                    <div class="tech">
-                        <p>HTML5, CSS3, JavaScript,OpenWeather API</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="https://bilal-773.github.io/SkyPredict/" target="_blank"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="https://github.com/bilal-773?tab=repositories" target="_blank"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
-                </div>
-
                 
-                </div>
             </div>
 
-            <div class="portfolio-box">
-                <div class="portfolio-carousel">
-                    <div class="img-slide">
-                        <div class="img-item">
-                            <img src="by.png" alt="BUYZ Diagnosis System Screenshot" />
-                            <div class="img-caption">BUYZ Diagnosis System</div>
+            <div class="home-img">
+                <div class="img-box">
+                    <div class="img-item">
+                        <img src="2.jpg" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- services section -->
+        <section class="services">
+            <h2 class="heading">My <span>Services</span></h2>
+            <div class="services-container">
+                <div class="services-box">
+                    <div class="icon">
+                        <i class='bx bx-code-alt'></i>
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Building responsive, modern websites using HTML, CSS, and JavaScript. Whether it's a personal portfolio, business landing page, or interactive web app, I deliver clean, user-friendly interfaces tailored to your needs.</p>
+                </div>
+
+                <div class="services-box">
+                    <div class="icon">
+                        <i class='bx bx-palette'></i>
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Providing custom graphic design solutions for social media, branding, posters, and promotional content. I create visually compelling designs that align with your brand's identity, using tools like Adobe Photoshop, Illustrator, and Canva.</p>
+                </div>
+
+                <div class="services-box">
+                    <div class="icon">
+                        <i class='bx bx-camera'></i>
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    </div>
+                    <h3>Photography</h3>
+                    <p>Offering professional photography services including event coverage, portraits, and product shoots. I focus on capturing high-quality, story-driven visuals with attention to lighting, composition, and post-editing for a polished final look.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- resume section -->
+        <section class="resume">
+            <div class="resume-container">
+                <div class="resume-box">
+                    <h2>Why Hire Me?</h2>
+                    <p class="desc">With a strong foundation in web development, graphic design, and photography, I bring a unique blend of technical and creative skills to every project. I'm passionate about delivering high-quality work, meeting deadlines, and adapting to different client needs. My attention to detail, problem-solving mindset, and commitment to continuous learning make me a reliable and valuable addition to any team or project.</p>
+                    <button class="resume-btn active" aria-label="Show Experience">Experience</button>
+                    <button class="resume-btn" aria-label="Show Education">Education</button>
+                    <button class="resume-btn" aria-label="Show Skills">Skills</button>
+                    <button class="resume-btn" aria-label="Show About Me">About Me</button>
+                </div>
+
+                <div class="resume-box">
+                    <div class="resume-detail experience active">
+                        <h2 class="heading">My <span>Experience</span></h2>
+                        <p class="desc">Experienced in web development with a focus on responsive and interactive designs using HTML, CSS, and JavaScript. Skilled in graphic design, creating visually impactful content for branding and social media. Also offer professional photography services, capturing high-quality visuals for events and personal projects.</p>
+                        <div class="resume-list">
+                            <div class="resume-item">
+                                <p class="year">Present</p>
+                                <h3>Frontend Developer</h3>
+                                <p class="company"></p>
+                                <p>Skilled in front-end development using HTML, CSS, and JavaScript to build responsive, user-friendly, and interactive web interfaces.</p>
+                            </div>
+                           
+                            <div class="resume-item">
+                                <p class="year">Present</p>
+                                <h3>Backend Developer</h3>
+                                <p class="company"></p>
+                                <p>Skilled in back-end development with experience in server-side logic, databases, and APIs to build secure and scalable web applications.</p>
+                            </div>
+                            <div class="resume-item">
+                                <p class="year">Present</p>
+                                <h3>Graphic Designer</h3>
+                                <p class="company">MLSA</p>
+                                <p>Graphic designer skilled in branding and social media visuals, with proficiency in Photoshop, Illustrator, and Canva.</p>
+                            </div>
                         </div>
-                        <div class="img-item">
-                            <img src="Weather.png" alt="Sky Predict Weather App Screenshot" />
-                            <div class="img-caption">Sky Predict</div>
+                    </div>
+
+                    <div class="resume-detail education">
+                        <h2 class="heading">My <span>Education</span></h2>
+                        <p class="desc">Currently pursuing a Bachelor's in Computer Science (BSCS) at FAST University, with a strong focus on software development and web technologies.</p>
+                        <div class="resume-list">
+                            <div class="resume-item">
+                                <p class="year">2020-2022</p>
+                                <h3>OLevels</h3>
+                                <p class="company">Fatima Fertilizer School</p>
+                                <p>Built a strong foundation in core subjects including Mathematics, English, and Science.</p>
+                            </div>
+                            <div class="resume-item">
+                                <p class="year">2022 - 2024</p>
+                                <h3>Alevels</h3>
+                                <p class="company">Fatima Fertilizer School</p>
+                                <p>Focused on Computer Science, Mathematics, and Physics to prepare for a tech-driven career.</p>
+                            </div>
+                            <div class="resume-item">
+                                <p class="year">2024-Present</p>
+                                <h3>BS Computer Science</h3>
+                                <p class="company">FAST-NUCES</p>
+                                <p>Pursuing a BS in Computer Science with a focus on software development, algorithms, and web technologies.</p>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <div class="resume-detail skills">
+                        <h2 class="heading">My <span>Skills</span></h2>
+                        <p class="desc">Skilled in HTML5, CSS3, and JavaScript for building responsive and interactive web interfaces. Experienced with React.js for creating dynamic, component-based front-end applications.</p>
+                        <div class="resume-list">
+                            <div class="resume-item">
+                                <i class='bx bxl-html5'></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="resume-item">
+                                <i class='bx bxl-css3'></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="resume-item">
+                                <i class='bx bxl-javascript'></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="resume-item">
+                                <i class='bx bxl-react'></i>
+                                <span>React.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-detail about">
+                        <h2 class="heading">About <span>Me</span></h2>
+                        <p class="desc">Passionate Computer Science student with skills in web development, graphic design, and photography. Experienced in front-end technologies like HTML, CSS, JavaScript, and React. Creative, detail-oriented, and eager to contribute to innovative tech projects.</p>
+                        <div class="resume-list">
+                            <div class="resume-item">
+                                <p>Name <span>Muhammad Bilal</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Gender <span>Male</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Age <span>20 Years Old</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Status <span>Un-Married</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>City <span>Peshawar</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Nationality <span>Pakistani</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Experience <span>2+ Years</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Full Time <span>Available</span></p>
+                            </div>
+
+                            <div class="resume-item">
+                                <p>Phone <span>(+92) 312 303 117 7</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Email <span>bilal773asif@gmail.com</span></p>
+                            </div>
+                            <div class="resume-item">
+                                <p>Languages <span>English, Urdu</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- portfolio section -->
+        <section class="portfolio">
+            <h2 class="heading">Latest <span>Project</span></h2>
+            <div class="portfolio-container">
+                <div class="portfolio-box">
+                    <div class="portfolio-detail active">
+                        <p class="numb">01</p>
+                        <h3>Frontend Project</h3>
+                        <p>BUYZ Diagnosis System is an interactive web app that helps users analyze their symptoms and get potential health problem matches. Featuring a responsive design, it offers an easy-to-use checklist, real-time analysis, and clear results, all built with HTML, CSS, and JavaScript for a smooth user experience.</p>
+                        <div class="tech">
+                            <p>HTML5, CSS3, JavaScript</p>
+                        </div>
+                        <div class="live-github">
+                            <a href="https://bilal-773.github.io/BUYZ-Diagnosis-System/" target="_blank"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                            <a href="https://github.com/bilal-773?tab=repositories" target="_blank"><i class='bx bxl-github'></i><span>Github Repository</span></a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-detail">
+                        <p class="numb">02</p>
+                        <h3>Frontend + API Project</h3>
+                        <p>Sky Predict is a sleek and interactive weather app that provides real-time weather updates and a 5-day forecast using the OpenWeather API. It features a modern glassmorphism UI, smooth animations, and easy city search functionality.
+
+                            🔹 Features
+                            ✅ Live weather updates (temp, humidity, wind speed)
+                            ✅ 5-day forecast with dynamic icons
+                            ✅ Responsive, animated glass UI
+                            ✅ Error handling for invalid cities</p>
+                        <div class="tech">
+                            <p>HTML5, CSS3, JavaScript,OpenWeather API</p>
+                        </div>
+                        <div class="live-github">
+                            <a href="https://bilal-773.github.io/SkyPredict/" target="_blank"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
+                            <a href="https://github.com/bilal-773?tab=repositories" target="_blank"><i class='bx bxl-github'></i><span>Github Repository</span></a>
+                        </div>
+                    </div>
+
+                    
+                    </div>
+                </div>
+
+                <div class="portfolio-box">
+                    <div class="portfolio-carousel">
+                        <div class="img-slide">
+                            <div class="img-item">
+                                <img src="by.png" alt="BUYZ Diagnosis System Screenshot" loading="lazy" />
+                                <div class="img-caption">BUYZ Diagnosis System</div>
+                            </div>
+                            <div class="img-item">
+                                <img src="Weather.png" alt="Sky Predict Weather App Screenshot" loading="lazy" />
+                                <div class="img-caption">Sky Predict</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navigation">
+                        <button class="arrow-left disabled" aria-label="Previous Portfolio Image"><i class='bx bx-chevron-left'></i></button>
+                        <button class="arrow-right" aria-label="Next Portfolio Image"><i class='bx bx-chevron-right'></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact section -->
+        <section class="contact">
+            <div class="contact-container">
+                <div class="contact-box">
+                    <h2>Let's Work Together</h2>
+                    <p class="desc"></p>
+                    <div class="contact-detail">
+                        <i class='bx bxs-phone'></i>
+                        <div class="detail">
+                            <p>Phone</p>
+                            <p>(+92) 312 303 117 7</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class='bx bxs-envelope'></i>
+                        <div class="detail">
+                            <p>Email</p>
+                            <p>bilal773asif@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class='bx bxs-map'></i>
+                        <div class="detail">
+                            <p>Address</p>
+                            <p>FAST University
+                                Peshawar Campus
+                                Hayatabad Phase 1, Industrial Estate, Peshawar, Pakistan</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="navigation">
-                    <button class="arrow-left disabled"><i class='bx bx-chevron-left'></i></button>
-                    <button class="arrow-right"><i class='bx bx-chevron-right'></i></button>
+                <div class="contact-box">
+                    <form action="https://formspree.io/f/mwkgyyqv" method="POST">
+                        <h2 class="heading">Contact <span>Me!</span></h2>
+                        <div class="field-box">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                            <input type="text" name="phone" placeholder="Phone Number" required>
+                            <input type="text" name="subject" placeholder="Email Subject" required>
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                            <input type="text" name="_gotcha" style="display:none">
+                        </div>
+                        <button type="submit" class="btn" aria-label="Send Message">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- contact section -->
-    <section class="contact">
-        <div class="contact-container">
-            <div class="contact-box">
-                <h2>Let's Work Together</h2>
-                <p class="desc"></p>
-                <div class="contact-detail">
-                    <i class='bx bxs-phone'></i>
-                    <div class="detail">
-                        <p>Phone</p>
-                        <p>(+92) 312 303 117 7</p>
-                    </div>
-                </div>
-                <div class="contact-detail">
-                    <i class='bx bxs-envelope'></i>
-                    <div class="detail">
-                        <p>Email</p>
-                        <p>bilal773asif@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-detail">
-                    <i class='bx bxs-map'></i>
-                    <div class="detail">
-                        <p>Address</p>
-                        <p>FAST University
-                            Peshawar Campus
-                            Hayatabad Phase 1, Industrial Estate, Peshawar, Pakistan</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-box">
-                <form action="">
-                    <h2 class="heading">Contact <span>Me!</span></h2>
-                    <div class="field-box">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="text" placeholder="Phone Number" required>
-                        <input type="text" placeholder="Email Subject" required>
-                        <textarea name="" id="" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+    <footer>
+        <div style="text-align:center; color:var(--white-color); padding:2rem 0; font-size:1.4rem;">
+            
         </div>
-    </section>
-    
+    </footer>
 
     <!-- custom js -->
     <script src="script.js"></script>
