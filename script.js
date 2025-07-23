@@ -4,10 +4,13 @@ const sections = document.querySelectorAll('section');
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('header nav');
 
-menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-});
+// Mobile menu toggle
+const nav = document.querySelector('nav');
+if (menuIcon && nav) {
+    menuIcon.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+}
 
 const activePage = () => {
     const header = document.querySelector('header');
@@ -35,13 +38,22 @@ const activePage = () => {
     navbar.classList.remove('active');
 }
 
+// Smooth scroll for navigation links
 navLinks.forEach((link, idx) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        // Smooth scroll to section if anchor
+        const section = sections[idx];
+        if (section) {
+            e.preventDefault();
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Mobile menu: close after click
+        nav.classList.remove('active');
+        menuIcon.classList.remove('bx-x');
+        // Active page logic
         if (!link.classList.contains('active')) {
             activePage();
-
             link.classList.add('active');
-
             setTimeout(() => {
                 sections[idx].classList.add('active');
             }, 1100);
@@ -96,31 +108,32 @@ const activePortfolio = () => {
     portfolioDetails[index].classList.add('active');
 }
 
-arrowRight.addEventListener('click', () => {
-    if (index < 4) {
-        index++;
-        arrowLeft.classList.remove('disabled');
-    }
-    else {
-        index = 5;
-        arrowRight.classList.add('disabled');
-    }
+// Portfolio arrows: clamp index and disable appropriately for mobile
+const updatePortfolioArrows = () => {
+    const total = document.querySelectorAll('.portfolio-detail').length;
+    arrowLeft.classList.toggle('disabled', index <= 0);
+    arrowRight.classList.toggle('disabled', index >= total - 1);
+};
 
+arrowRight.addEventListener('click', () => {
+    const total = document.querySelectorAll('.portfolio-detail').length;
+    if (index < total - 1) {
+        index++;
+    }
+    updatePortfolioArrows();
     activePortfolio();
 });
 
 arrowLeft.addEventListener('click', () => {
-    if (index > 1) {
+    if (index > 0) {
         index--;
-        arrowRight.classList.remove('disabled');
     }
-    else {
-        index = 0;
-        arrowLeft.classList.add('disabled');
-    }
-
+    updatePortfolioArrows();
     activePortfolio();
 });
+
+// Initialize arrow state on load
+updatePortfolioArrows();
 
 // Contact form validation and feedback
 const contactForm = document.querySelector('.contact-box form');
