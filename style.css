@@ -13,13 +13,14 @@
 :root {
     --bg-color: #0D1117; /* Deep Black-Blue */
     --second-bg-color: #161B22; /* Soft Black */
-    --main-color: #58A6FF; /* Bright Blue */
+    --main-color: #79b8ff; /* Brighter Blue for better contrast */
     --white-color: #C9D1D9; /* Very light gray */
     --disabled-color: #C9D1D966; /* 40% opacity of text color for disabled */
 }
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -64,12 +65,11 @@ nav a {
     color: var(--white-color);
     font-weight: 500;
     margin-left: 3.5rem;
-    transition: .5s;
 }
 
-nav a:hover,
-nav a.active {
+nav a:focus, nav a:hover {
     color: var(--main-color);
+    text-decoration: underline;
 }
 
 #menu-icon {
@@ -161,25 +161,14 @@ section.active {
     display: inline-block;
     color: transparent;
     -webkit-text-stroke: .07rem var(--main-color);
-    opacity: 0;
-    pointer-events: none;
-    animation: display-text 6s linear infinite;
-}
-
-.home-detail h2 span:nth-of-type(1) {
-    animation-delay: 0s;
-}
-.home-detail h2 span:nth-of-type(2) {
-    animation-delay: 2s;
-}
-.home-detail h2 span:nth-of-type(3) {
-    animation-delay: 4s;
+    animation: display-text 12s linear infinite;
+    animation-delay: calc(-4s * var(--i));
 }
 
 @keyframes display-text {
-	0% { opacity: 1; pointer-events: auto; }
-    33.33% { opacity: 0; pointer-events: none; }
-    100% { opacity: 0; pointer-events: none; }
+    25%, 100% {
+        display: none;
+    }
 }
 
 .home-detail h2 span::before {
@@ -190,19 +179,14 @@ section.active {
     color: var(--main-color);
     white-space: nowrap;
     overflow: hidden;
-    animation: fill-text 2s linear;
-    animation-delay: inherit;
+    animation: fill-text 4s linear infinite;
 }
 
 @keyframes fill-text {
-
-    10%,
-    100% {
+    10%, 100% {
         width: 0;
     }
-
-    70%,
-    90% {
+    70%, 90% {
         width: 100%;
     }
 }
@@ -230,10 +214,13 @@ section.active {
     transition: .5s;
 }
 
-.btn:hover {
+.btn:focus, .btn:hover {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
     background: transparent;
     color: var(--main-color);
     box-shadow: none;
+    text-decoration: underline;
 }
 
 .home-detail .btn-sci .sci {
@@ -426,6 +413,13 @@ section.active {
 .resume-box .resume-btn.active {
     border-color: var(--main-color);
     color: var(--main-color);
+}
+
+.resume-btn:focus, .resume-btn:hover {
+    outline: 2px solid var(--main-color);
+    outline-offset: 2px;
+    color: var(--main-color);
+    text-decoration: underline;
 }
 
 .resume-detail {
@@ -774,13 +768,28 @@ section.active {
     border-color: var(--main-color);
 }
 
+input.invalid, textarea.invalid {
+    border-color: #ff4d4f !important;
+    background: #2d1a1a;
+}
+
+.form-feedback {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
 .contact-box .btn {
     margin-top: 2rem;
     cursor: pointer;
 }
 
-p, h2 {
-    word-break: break-word;
+button:focus, button:hover {
+    outline: 2.5px solid var(--main-color);
+    outline-offset: 2px;
+    color: var(--main-color);
+    background: var(--second-bg-color);
+    text-decoration: underline;
 }
 
 /* breakpoints */
@@ -864,25 +873,13 @@ p, h2 {
 }
 
 @media screen and (max-width: 600px) {
-    html {
-        font-size: 45%;
-    }
     .home-img .img-box {
-        width: 20rem;
-        height: 20rem;
+        width: 30rem;
+        height: 30rem;
     }
-    .portfolio-carousel .img-item img {
-        height: 18rem;
-    }
-    .portfolio-container,
-    .resume-container,
-    .contact-container,
-    .services-container {
+
+    .contact-box .field-box {
         grid-template-columns: 1fr;
-    }
-    .resume-list,
-    .portfolio-carousel .img-slide {
-        overflow-x: auto;
     }
 }
 
@@ -912,29 +909,10 @@ p, h2 {
     }
 
     .contact-box form {
-        padding: 1.5rem 1.5rem 2rem;
+        padding: 2.5rem 3rem 3.5rem;
     }
 
     .contact-box h2 {
-        font-size: 2.5rem;
-    }
-
-    .btn {
-        width: 100%;
-        font-size: 1.2rem;
-        padding: 1rem 0.5rem;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    html {
-        font-size: 35%;
-    }
-    .home-img .img-box {
-        width: 14rem;
-        height: 14rem;
-    }
-    .portfolio-carousel .img-item img {
-        height: 10rem;
+        font-size: 3.5rem;
     }
 }
