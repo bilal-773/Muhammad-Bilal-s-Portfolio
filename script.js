@@ -121,3 +121,41 @@ arrowLeft.addEventListener('click', () => {
 
     activePortfolio();
 });
+
+// Contact form validation and feedback
+const contactForm = document.querySelector('.contact-box form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        let valid = true;
+        let firstInvalid = null;
+        inputs.forEach(input => {
+            input.classList.remove('invalid');
+            if (!input.value.trim()) {
+                input.classList.add('invalid');
+                valid = false;
+                if (!firstInvalid) firstInvalid = input;
+            } else if (input.type === 'email' && !/^\S+@\S+\.\S+$/.test(input.value)) {
+                input.classList.add('invalid');
+                valid = false;
+                if (!firstInvalid) firstInvalid = input;
+            }
+        });
+        let feedback = contactForm.querySelector('.form-feedback');
+        if (!feedback) {
+            feedback = document.createElement('div');
+            feedback.className = 'form-feedback';
+            contactForm.appendChild(feedback);
+        }
+        if (!valid) {
+            feedback.textContent = 'Please fill out all fields correctly.';
+            feedback.style.color = '#ff4d4f';
+            if (firstInvalid) firstInvalid.focus();
+        } else {
+            feedback.textContent = 'Message sent successfully! (Demo only)';
+            feedback.style.color = '#58A6FF';
+            contactForm.reset();
+        }
+    });
+}
