@@ -147,13 +147,17 @@ section.active {
 }
 
 .home-detail h1 {
-    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    font-size: 3.5rem;
+    margin: 0;
+    text-align: center;
 }
 
 .home-detail h2 {
     display: inline-block;
     font-size: 3.2rem;
     margin-top: -1rem;
+    text-align: center;
+    width: 100%;
 }
 
 .home-detail h2 span {
@@ -163,6 +167,7 @@ section.active {
     -webkit-text-stroke: .07rem var(--main-color);
     animation: display-text 12s linear infinite;
     animation-delay: calc(-4s * var(--i));
+    margin: 0 0.2em;
 }
 
 @keyframes display-text {
@@ -459,7 +464,7 @@ section.active {
 .resume-list .resume-item {
     background: var(--second-bg-color);
     border-radius: .8rem;
-    padding: 3rem 2.5rem;
+    padding: 3rem 2rem;
     height: calc((45rem - 2rem) / 2);
     display: flex;
     flex-direction: column;
@@ -816,70 +821,491 @@ button:focus, button:hover {
 }
 
 @media screen and (max-width: 768px) {
-    #menu-icon {
-        display: block;
+    /* Mobile Menu Toggle */
+    header {
+        padding: 1rem 2.5rem;
     }
 
     nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 0;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        text-align: center;
         display: none;
+        flex-direction: column;
+        text-align: center;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
     }
 
     nav.active {
-        display: block;
+        display: flex;
+        max-height: 500px;
+        opacity: 1;
     }
 
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 3rem;
+    }
+
+    /* Smooth Menu Toggle Transition */
     nav a {
-        display: block;
-        margin: 4rem 0;
+        margin: 1rem 0;
+        padding: 1rem;
+        font-size: 1.8rem;
     }
 
+    /* Sidebar in Mobile View (Prevent Text Clipping) */
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    /* Align all sections properly in mobile view */
+    /* Home Section Layout Adjustments */
     .home {
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 3rem 2rem;
+    }
+    /* Adjust Image Size for Mobile */
+    .home-img .img-box {
+        width: 50vw;
+        height: 50vw;
+    }
+    .home-img .img-box .img-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    /* Adjust Home Section Text */
+    .home-detail h1 {
+        font-size: 3.5rem;
+        margin: 0;
+    }
+    .home-detail p {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    /* Center-align the button and social icons */
+    .home-detail .btn-sci {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .home-detail .btn-sci .sci {
+        margin-bottom: 0;
+    }
+    .home-detail .btn-sci .btn {
+        margin-top: 1rem;
+    }
+    /* Adjust Icon Sizes */
+    .home-detail .btn-sci .sci a {
+        margin: 0.5rem;
+    }
+    /* Services Section */
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .services-container .services-box {
+        padding: 2.5rem;
+        font-size: 1.4rem;
+    }
+    /* Resume Section */
+    .resume-container {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
-
-    .home-img .img-box {
-        width: 35rem;
-        height: 35rem;
+    .resume-box {
+        text-align: center;
     }
-
-    .resume-container,
-    .portfolio-container,
-    .contact-container {
+    /* Portfolio Section */
+    .portfolio-container {
         grid-template-columns: 1fr;
     }
-
-    .resume-container {
-        gap: 3rem;
+    /* Contact Section */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contact-box {
+        text-align: center;
+    }
+    .contact-box form {
+        padding: 2.5rem 3rem;
+    }
+    /* Ensure form inputs are full width on mobile */
+    .contact-box .field-box input,
+    .contact-box .field-box textarea {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    /* Home image frame for tablet mode */
+    .home-img .img-box {
+        width: 45vw;
+        height: 45vw;
+    }
+    .home-img .img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .portfolio-container .portfolio-box:first-child {
-        order: 1;
+    /* Grid layouts for mobile */
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+    .resume-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .contact-box .field-box {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media screen and (max-width: 600px) {
-    .home-img .img-box {
-        width: 30rem;
-        height: 30rem;
-    }
-
-    .contact-box .field-box {
+    /* Contact page mobile view */
+    .contact-container {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .contact-box {
+        text-align: center;
+    }
+    .contact-box form {
+        padding: 2.5rem 3rem 3.5rem;
+    }
+    .contact-detail {
+        margin-bottom: 2rem;
+    }
+    .contact-box .field-box input, .contact-box .field-box textarea {
+        width: 100%;
+    }
+    /* Portfolio image size for mobile preview */
+    .portfolio-carousel .img-item img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+    }
+    /* Home Section Button and Icons */
+    .home-detail .btn-sci {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    .home-detail .btn-sci .sci {
+        margin-bottom: 0;
+    }
+    .home-detail .btn-sci .btn {
+        margin-bottom: 1.5rem;
+    }
+    .home-detail .btn-sci .sci a {
+        margin: 0 1rem;
+    }
+    .home-detail .btn-sci .sci a i {
+        font-size: 2rem;
+    }
+    /* Buttons and Links */
+    .btn, nav a {
+        transition: all 0.3s ease;
+    }
+    /* Hover Effects for Buttons */
+    .btn:hover, .btn:focus {
+        background-color: transparent;
+        color: var(--main-color);
+        border-color: var(--main-color);
+        box-shadow: none;
+        text-decoration: underline;
+    }
+    /* Hover Effects for Links */
+    nav a:hover {
+        color: var(--main-color);
+        text-decoration: underline;
+    }
+    .services-box:hover, .portfolio-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 0.5rem var(--main-color);
+    }
+    /* Experience Section Blue Circle */
+    .resume-item .year {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--main-color);
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        margin-left: -1.5rem;
+    }
+    .resume-item h3 {
+        position: relative;
+        padding-left: 2rem;
+    }
+    .resume-item p {
+        margin-left: 2rem;
+    }
+    /* Resume Section Improvements for Mobile */
+    .resume-detail {
+        padding: 1.5rem 0.5rem;
+    }
+    .resume-list {
+        gap: 2.5rem;
+        padding: 0.5rem;
+    }
+    .resume-item {
+        background: #23272f;
+        border: 1px solid var(--second-bg-color);
+        border-radius: 1rem;
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .resume-detail h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .resume-item h3 {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    .resume-item .year {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        color: var(--main-color);
+        margin-bottom: 0.7rem;
+        background: #181b20;
+        border-radius: 0.7rem;
+        padding: 0.3rem 0.8rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Resume Section - Experience Section */
+    .resume-detail.experience {
+        padding: 2rem 2rem;
+    }
+    .resume-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .resume-item {
+        background: var(--second-bg-color);
+        border-radius: .8rem;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+        min-height: 130px;
+        width: 100%;
+        position: relative;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .resume-item .year {
+        color: var(--main-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        text-align: left;
+    }
+    .resume-item h3 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+    }
+    .resume-item p {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        padding-left: 1rem;
+    }
+    /* Resume Section - Education Section */
+    .resume-detail.education {
+        padding: 2rem 2rem;
+    }
+    .resume-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .resume-item {
+        background: var(--second-bg-color);
+        border-radius: .8rem;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+    }
+    .resume-item .year {
+        color: var(--main-color);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+    .resume-item h3 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+    }
+    .resume-item p {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+    /* General spacing adjustments for sections */
+    section {
+        padding: 5rem 2rem;
+    }
+    /* Resume List for Education Section */
+    .resume-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    /* Increase size and padding of resume-item */
+    .resume-item {
+        background: var(--second-bg-color);
+        border-radius: .8rem;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+        min-height: 120px;
+        align-items: flex-start;
+        position: relative;
+    }
+    /* Make sure year stays inside the box with proper alignment */
+    .resume-item .year {
+        color: var(--main-color);
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+    /* Adjust title (O Levels, A Levels, BS) positioning */
+    .resume-item h3 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+    }
+    /* Description inside the resume items */
+    .resume-item p {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        padding-left: 1rem;
+    }
+    /* Education Section Heading */
+    .resume-box h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    /* Adjust Resume Container Grid for Mobile */
+    .resume-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    /* Ensure the section heading is centered properly */
+    .resume-box {
+        text-align: center;
+    }
+    /* Adjust padding inside the experience and education section */
+    .resume-box .desc {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    .resume-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .resume-item {
+        background: var(--second-bg-color);
+        border-radius: .8rem;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+        height: auto;
+        align-items: flex-start;
+    }
+    .resume-item .year {
+        color: var(--main-color);
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+        font-weight: bold;
+        display: block;
+    }
+    .resume-item h3 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+    }
+    .resume-item p {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        text-align: left;
+    }
+    .resume-box h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .resume-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .resume-list .resume-item {
+        min-height: 160px;
+        padding: 2rem;
+    }
+    /* Add space between the year and degree name */
+    .resume-item .year {
+        margin-bottom: 1rem;
+    }
+    .resume-item h3 {
+        margin-top: 1rem;
+    }
+    /* Adjust the spacing for the degree items */
+    .resume-item {
+        margin-bottom: 1.5rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    /* Adjust Education Section for smaller screens */
+    .resume-item .year {
+        font-size: 1.8rem;
+        padding: 0.6rem 1.2rem;
+    }
+    .resume-item h3 {
+        font-size: 1.8rem;
+    }
+    .resume-item p {
+        font-size: 1.4rem;
+    }
+    .resume-list .resume-item {
+        padding: 2rem;
+        min-height: 180px;
     }
 }
 
@@ -914,5 +1340,80 @@ button:focus, button:hover {
 
     .contact-box h2 {
         font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Mobile View Adjustments */
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    .home-img {
+        order: -1;
+    }
+    .home-img .img-box {
+        width: 60vw;
+        height: 60vw;
+    }
+    .home-img .img-box .img-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .home-detail {
+        text-align: center;
+    }
+    .home-detail h1 {
+        font-size: 3rem;
+    }
+    .home-detail h2 {
+        font-size: 2.5rem;
+    }
+    .home-detail p {
+        font-size: 1.4rem;
+    }
+    .home-detail .btn-sci {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .home-detail .btn-sci .btn {
+        margin-top: 1rem;
+    }
+}
+@media screen and (min-width: 769px) {
+    .home {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .home-img .img-box {
+        width: 32vw;
+        height: 32vw;
+    }
+    .home-img .img-box .img-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .home-detail {
+        text-align: left;
+    }
+    .home-detail h1 {
+        font-size: 3.5rem;
+    }
+    .home-detail h2 {
+        font-size: 3rem;
+    }
+    .home-detail p {
+        font-size: 1.6rem;
+    }
+    .home-detail .btn-sci {
+        flex-direction: row;
     }
 }
